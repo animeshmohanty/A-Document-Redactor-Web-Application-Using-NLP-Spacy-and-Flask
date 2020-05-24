@@ -11,9 +11,9 @@
       $('.slider').slider({
         indicators: false,
         // we don't want the little dots to show
-        height: 500,
+        height: 420,
         transition: 500,
-        interval: 6000
+        interval: 420
         // how long the slide stays for
       });
 
