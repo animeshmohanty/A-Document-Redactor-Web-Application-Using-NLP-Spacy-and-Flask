@@ -13,7 +13,7 @@
 </head>
 </head>
 <body><div class="navbar-fixed">
-   <nav class="purple darken-3" role="navigation">
+   <nav class="black" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Text Summarizer</a>
       <ul class="right hide-on-med-and-down">
@@ -41,11 +41,11 @@
         <div class="caption center-align">
           <h2>Final year project by Animesh Mohanty and Hemant Singh under our Guide: Dr K.P. Vijayakumar</h2>
           <h5 class="light blue-text-text text-lighten-3 hide-on-small-only">
-           Comparison using SpaCy and NLTK
+           Comparison using Abstractive and Extractive Summarizers
           </h5>
          
            <div class="row center">
-          <a href="{{url_for('index')}}" id="download-button" class="btn-large waves-effect waves-light blue lighten-1">Refresh</a>
+          <a href="{{url_for('index')}}" id="download-button" class="btn-large waves-effect waves-light green darken-4">Refresh</a>
         </div>
         </div>
       </li>
@@ -56,7 +56,7 @@
           <h5 class="light grey-text text-lighten-3 hide-on-small-only">
            NLP based App
           </h5>
-          <a href="#aboutapp" class="btn btn-large waves-effect waves-light light-blue lighten-1">Learn More</a>
+          <a href="#aboutapp" class="btn btn-large waves-effect waves-light red darken-4">Learn More</a>
         </div>
       </li>
    
@@ -72,13 +72,14 @@
       <div class="row">
         <div class="input-field col s12 m10">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">compare</i></h2>
+            <h2 class="center black-text"><i class="material-icons">compare</i></h2>
+            <h5 class="center">Your Text Goes Here</h5>
            <form method="POST" action="/comparer">
          <textarea name="rawtext" cols="3" rows="5" class="form-control" required="true" placeholder="Enter Text Here"></textarea>
           
          <br/>
-         <button class="btn btn-small waves-effect waves-light  light-blue lighten-1" type="reset">Clear</button>
-          <button class="btn btn-small waves-effect waves-light purple lighten-1" type="submit">Summarize</button>
+         <button class="btn btn-small waves-effect waves-light  red darken-2" type="reset">Clear</button>
+          <button class="btn btn-small waves-effect waves-light green darken-2" type="submit">Summarize</button>
           
         </form>
           </div>
@@ -91,17 +92,17 @@
   <!-- End -->
 
   <!-- Results -->
-  <section class="section section-solutions-about purple lighten-2 ">
+  <section class="section section-solutions-about grey">
  <div class="container">
       <div class="row">
         <div class="col s12 m8">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">compare</i></h2>
+            <h2 class="center black-text"><i class="material-icons">compare</i></h2>
             <h5 class="center">Your Text</h5>
 
             <p class="light">{{ctext}}</p>
-            <div class="alert alert-info" role="alert"><p>Time Elapsed: <span style="color:#0091EA;">{{ final_time }} </span></p><br/>
-              <p>Reading Time: <span style="color:#0091EA;">{{ final_reading_time }} </span></p>
+            <div class="alert alert-info" role="alert"><p>Time Elapsed: <span style="color:darkgreen;">{{ final_time }} </span></p><br/>
+              <p>Reading Time: <span style="color:darkgreen">{{ final_reading_time }} </span></p>
         </div>
           </div>
         </div>
@@ -112,27 +113,27 @@
 </section>
 
     <!-- SECTION: RESULTS FOR DIFFERENT SUMMARIZERS -->
-  <section class="section section-solutions-about grey lighten-3 ">
+  <section class="section section-solutions-about grey darken-2 ">
     <div class="container">
       <div class="row">
     
         <div class="col s12 m12 offset-m1">
           <div class="row">
             <div class="col s12">
-              <ul class="tabs">
-                <li class="tab col s3">
-                  <a href="#tab1" class="blue-text">SpaCy Summarizer</a>
+              <ul class="tabs grey darken-4" >
+                <li class="tab offset-m1 col s3">
+                  <a href="#tab1" class="green-text">Abstractive Summarizer</a>
                 </li>
                 
-                <li class="tab col s3">
-                  <a href="#tab3" class="blue-text">NLTK</a>
+                <li class="tab offset-m4 col s3 offset-m1">
+                  <a href="#tab3" class="red-text">Extractive Summarizer</a>
                 </li>
                 
               </ul>
             </div>
             <div id="tab1" class="col s12">
-              <h5>SpaCy</h5>
-              <div class="" ><p>Reading Time: <span style="color:#0091EA;">{{ summary_reading_time }} min  </span></p></div>
+              <h5>Abstractive</h5>
+              <div class="" ><p>Reading Time: <span style="color:darkgreen;">{{ summary_reading_time }} min  </span></p></div>
               <div class="grey lighten-1"><p style="padding:5px;font-size:14px;">{{ final_summary_spacy }}</p></div>
           
                 
@@ -141,8 +142,8 @@
          
             </div>
             <div id="tab3" class="col s12">
-              <h5>NLTK</h5>
-                 <div class=""><p>Reading Time: <span style="color:#0091EA;">{{ summary_reading_time_nltk }} min  </span></p>
+              <h5>Extractive</h5>
+                 <div class=""><p>Reading Time: <span style="color:darkred;">{{ summary_reading_time_nltk }} min  </span></p>
               </div>
               <div class="grey lighten-1"><p style="padding:5px;font-size:14px;">{{ final_summary_nltk }}</p></div>
           
@@ -158,13 +159,12 @@
     </div>
   </section>
 
-   <footer class="page-footer purple darken-3">
+   <footer class="page-footer black">
     <div class="container" id="aboutapp">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">About Summary App</h5>
-          <p class="grey-text text-lighten-4">Using Spacy,NLTk and Gensim for Text Summarization
-.</p> </div>
+          <p class="grey-text text-lighten-4">Using Spacy and NLTK for comparing Extractive and Abstractive Text Summarization.</p> </div>
       
    <div class="col-l2 s12">
           <h5 class="white-text">Connect With Me</h5>
